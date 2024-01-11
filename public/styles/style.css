@@ -21,9 +21,10 @@ h1 {
   padding: 30px;
 }
 
-.randomDiv {
+.randomDiv,
+.searchDiv {
   text-align: center;
-  padding: 20px;
+  padding: 50px;
 }
 
 .random {

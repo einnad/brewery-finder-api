@@ -21,6 +21,7 @@
     <main>
       <h1>Generate or search a brewery</h1>
       <div class="randomDiv">
+        <h2>Generate</h2>
         <form action="/submit" method="POST">
           <input class="random" type="submit" value="Generate Random" />
         </form>
@@ -28,16 +29,31 @@
         <p><%= random.name %></p>
         <p><%= random.state_province %></p>
         <p><%= random.website_url %></p>
-        <% } else { %>
-        <p>Brewery name</p>
-        <p>Brewery state</p>
-        <p>Brewery website</p>
         <% } %>
+      </div>
+
+      <div class="searchDiv">
+        <h2>Search</h2>
+        <p>
+          If you know a place or just want to surf through the options, enter a
+          word below.
+        </p>
+        <p>Popular words might get you a LOT of options...</p>
+        <form method="POST">
+          <input name="keyword" type="text" placeholder="Enter a key word" />
+          <input type="submit" value="Search" formaction="/search" />
+        </form>
+        <% if(locals.search) { %> <% search.forEach(s => { %>
+        <p><%= s.name %></p>
+        <p><%= s.state_province %></p>
+        <p><%= s.website_url %></p>
+        <br />
+        <% }) %> <% } %>
       </div>
     </main>
 
     <footer>
-      <p>Copyright 2024</p>
+      <p>© 2024 Dannielle B</p>
     </footer>
   </body>
 </html>
