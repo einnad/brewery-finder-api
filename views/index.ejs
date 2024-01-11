@@ -24,9 +24,15 @@
         <form action="/submit" method="POST">
           <input class="random" type="submit" value="Generate Random" />
         </form>
+        <% if(locals.random) { %>
+        <p><%= random.name %></p>
+        <p><%= random.state_province %></p>
+        <p><%= random.website_url %></p>
+        <% } else { %>
         <p>Brewery name</p>
         <p>Brewery state</p>
         <p>Brewery website</p>
+        <% } %>
       </div>
     </main>
 
